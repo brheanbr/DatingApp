@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { fakeAsync } from '@angular/core/testing';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  registerMode = false;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  registerToogle() {
+    this.registerMode = true;
+  }
+
+  cancelRegisterMode(RegisterMode: boolean){
+    this.registerMode = RegisterMode;
   }
 
 }
