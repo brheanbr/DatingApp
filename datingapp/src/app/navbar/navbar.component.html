@@ -16,12 +16,12 @@
     <div *ngIf="loggedIn()" class="dropdown" dropdown>
           <a class="dropdown-toggle text-light" *ngIf="loggedIn()" dropdownToggle>
             Welcome {{this.authService.decodedToken?.unique_name}}!
-            </a>  
             <div class="dropdown-menu mt-2" *dropdownMenu>
-            <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Edit</a>
+            <a class="dropdown-item" [routerLink]="['/member/edit']"><i class="fa fa-user"></i>Edit</a>
             <div class="dropdown-divier"></div>
-            <a (click)="logout()" class="dropdown-item" href="#"><i class="fa fa-sign-out"></i>Logout</a>
+            <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out"></i>Logout</a>
             </div>
+          </a> 
     </div>
         
       <form *ngIf="!loggedIn()" #loginForm="ngForm" (ngSubmit)="login()" class="form-inline my-2 my-lg-0">
