@@ -42,6 +42,7 @@ namespace DatingApp.API
                     options.SerializerSettings.ContractResolver = new DefaultContractResolver();
                 });
             services.AddCors();
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CoudinarySettings"));
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IDatingRepository, DatingRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

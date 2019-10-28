@@ -1,7 +1,7 @@
 export interface Photo {
-    id: number;
+    Id: number;
     Url: string;
-    description: string;
-    dateAdded: Date;
-    isMain: boolean;
+    Description: string;
+    DateAdded: Date;
+    IsMain: boolean;
 }
